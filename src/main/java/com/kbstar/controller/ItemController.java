@@ -34,12 +34,19 @@ public class ItemController {
         model.addAttribute("center",dir+"get");
         return "index";
     }
-    @RequestMapping("/addcart")
-    public String addcart(Model model, Cart cart) throws Exception {
-        cartService.register(cart);
-        return "redirect:/item/get?id="+cart.getItem_id();
-//        return "redirect:/item/get?id="+cart.getCust_id();
+
+    @RequestMapping("/check")
+    public String check(Model model, Integer id, String cid) throws Exception{
+        Item item = null;
+        item = itemService.get(id);
+//        List<Cart> list = null;
+//        list = cartService.getMyCart(cid);
+//        model.addAttribute("allcart",list);
+        model.addAttribute("check",item);
+        model.addAttribute("center", dir+"check");
+        return "index";
     }
+
     @RequestMapping("/cart")
     public String cart(Model model, String id) throws Exception{
         List<Cart> list = null;
@@ -49,21 +56,18 @@ public class ItemController {
         return "index";
     }
 
+    @RequestMapping("/addcart")
+    public String addcart(Model model, Cart cart) throws Exception {
+        cartService.register(cart);
+        return "redirect:/item/get?id="+cart.getItem_id();
+    }
+//        return "redirect:/item/get?id="+cart.getCust_id();
+
     @RequestMapping("/addcheck")
     public String addcheck(Model model, Cart cart) throws Exception {
-        return "redirect:/item/cart?id="+cart.getId();
-//        return "redirect:/item/get?id="+cart.getCust_id();
+        return "redirect:/item/check?id="+cart.getItem_id();
     }
 
-
-    @RequestMapping("/check")
-    public String check(Model model, String id) throws Exception {
-        List<Cart> list = null;
-        list = cartService.getMyCart(id);
-        model.addAttribute("allcart",list);
-        model.addAttribute("center", dir+"check");
-        return "index";
-    }
 
     @RequestMapping("/search")
     public String search(Model model, ItemSearch ms) throws Exception {

@@ -2,6 +2,7 @@ package com.kbstar.service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.kbstar.dto.Cart;
 import com.kbstar.dto.Item;
 import com.kbstar.dto.ItemSearch;
 import com.kbstar.frame.KBService;
@@ -44,6 +45,10 @@ public class ItemService implements KBService<Integer, Item> {
     public Page<Item> getPage(int pageNo) throws Exception {
         PageHelper.startPage(pageNo, 4); // 3: 한화면에 출력되는 개수
         return mapper.getpage();
+    }
+
+    public List<Item> getMyItem(Integer id) throws Exception {
+        return mapper.getmyitem(id);
     }
 
 }

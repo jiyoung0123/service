@@ -50,7 +50,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-7 col-md-9">
-            <div id="colorlib-logo"><a href="/">Footwear</a></div>
+            <div id="colorlib-logo"><a href="/">DIGI슈</a></div>
           </div>
           <div class="col-sm-5 col-md-3">
             <form action="/item/search" method="get" id="search_form" class="search-wrap">

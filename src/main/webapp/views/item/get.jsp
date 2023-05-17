@@ -25,6 +25,22 @@
             });
         }
     };
+
+    let purchase = {
+        init: function(){ $('#purchase_btn').click(function(){
+            let cust_id = '${logincust.id}';
+            let item_id = ${gitem.id};
+            let cnt = $('#cnt').val();
+            $.ajax({
+                url:'/item/addcheck',
+                data:{cust_id:cust_id, item_id:item_id, cnt:cnt},
+                success:function(){
+                    $('#myModalPurchase').modal();
+                }
+            })
+        });
+        }
+    };
     let quantity_btn = {
        init:function(){
            var quantitiy=0;
@@ -58,6 +74,10 @@
     $(function(){
         item_get.init();
         quantity_btn.init();
+        purchase.init();
+    });
+    $(function () {
+        $('[data-toggle="popover"]').popover();
     });
 
 
@@ -138,15 +158,27 @@
                                     <div class="col-sm-12 text-center">
                                         <div class="form-group">
                                             <p class="addtocart">
-                                            <button id="cart_btn" type="button" class="btn btn-primary btn-addtocart">
-                                                <i class="icon-shopping-cart"></i> Add to Cart
+                                            <button id="purchase_btn" type="button" class="btn btn-primary btn-addtocart">
+                                                <i class="icon-shopping-bag2"></i> 바로 구매하기
                                             </button>
+                                            </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <p class="addtocart">
+                                                <button id="cart_btn" type="button" class="btn btn-primary btn-addtocart">
+                                                    <i class="icon-shopping-cart"></i> Add to Cart
+                                                </button>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </c:if>
+
+                        <c:if test="${logincust == null}">
+                            <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" data-content="로그인 후에 이용할 수 있습니다">주문하기</button>
+                        </c:if>
+
                     </div>
             </div>
             </div>
@@ -279,12 +311,32 @@
                 </div>
                 <div class="modal-body">
                     <a href="/item/cart?id=${logincust.id}" class="btn btn-info" role="button">장바구니로 이동</a>
-                    <a href="/item/men" class="btn btn-info" role="button">계속 쇼핑하기</a>
+                    <a href="/item/get?id=${gitem.id}" class="btn btn-info" role="button">계속 쇼핑하기</a>
                 </div>
                 <div class="modal-footer">
                 </div>
             </div>
         </div>
     </div>
+
+
+        <div id="myModalPurchase" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>결제를 진행합니다.</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+<%--                        <a href="/item/cart?id=${logincust.id}" class="btn btn-info" role="button">장바구니로 이동</a>--%>
+                        <a href="/item/check?id=${gitem.id}" class="btn btn-info" role="button">결제 페이지로 이동하기</a>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
 
 </div>

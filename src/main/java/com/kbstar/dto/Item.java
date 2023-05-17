@@ -14,6 +14,11 @@ public class Item {
         private int price;
         private String imgname;
         private Date rdate;
+
+        public Item(int id, int price) {
+                this.id = id;
+                this.price = price;
+        }
 }
 
 
