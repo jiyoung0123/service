@@ -177,8 +177,8 @@
 
                         <c:if test="${logincust == null}">
                             <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" data-content="로그인 후에 이용할 수 있습니다">주문하기</button>
+                            <a href="/login" class="btn btn-primary btn-addtocart" >Login</a>
                         </c:if>
-
                     </div>
             </div>
             </div>
