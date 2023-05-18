@@ -190,15 +190,14 @@
                         <div class="col-md-12 pills">
                             <div class="bd-example bd-example-tabs">
                                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Review</a>
+                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Description</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Manufacturer</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Review</a>
                                     </li>
                                 </ul>
 
