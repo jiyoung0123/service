@@ -10,6 +10,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 public class Review {
+    private int id;
     private String name;
     private Date rdate;
     private String text;
