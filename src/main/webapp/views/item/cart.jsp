@@ -92,14 +92,13 @@
 
           </div>
         </div>
-
       <div class="row row-pb-lg">
         <div class="col-md-12">
           <div class="total-wrap">
             <div class="row">
               <div class="col-sm-8">
-                <form action="/item/checkimpl" method="post" name="id" id="cart_check" value="${cart.id}">
-                  <input type="hidden" name="id" value="${cart.id}">
+                <form action="/item/checkimpl" method="post" id="cart_check" >
+                  <input type="hidden" name="cid" value="${allcart[0].cust_id}"/>
                   <div class="row form-group">
                     <div class="col-md-12 text-center">
                       <button class="btn btn-primary" id="cart_checkbtn"><i class="icon-shopping-bag"></i> 주문하기</button>

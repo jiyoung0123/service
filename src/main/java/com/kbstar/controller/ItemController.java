@@ -54,9 +54,12 @@ public class ItemController {
         return "index";
     }
     @RequestMapping("/checkimpl")
-    public String checkimpl(Model model, String id) throws Exception {
+    public String checkimpl(Model model, String cid) throws Exception {
         List<Cart> list = null;
-        list = cartService.getMyCart(id);
+        list = cartService.getMyCart(cid);
+        log.info("-----------------------------------------------");
+        log.info(cid);
+        log.info(list.toString());
         model.addAttribute("allcart",list);
         model.addAttribute("center",dir+"checkCart");
         return "index";

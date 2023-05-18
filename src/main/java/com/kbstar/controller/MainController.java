@@ -130,4 +130,10 @@ public class MainController {
         }
         return "index";
     }
+
+    @RequestMapping("/ordercom")
+    public String ordercom(Model model){
+        model.addAttribute("center","ordercom");
+        return "index";
+    }
 }

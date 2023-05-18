@@ -18,7 +18,6 @@
         </div>
     </div>
 
-
     <div class="colorlib-product">
         <div class="container">
             <div class="row row-pb-lg">
@@ -92,9 +91,9 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <c:forEach var="cart" items="${allcart}">
                     <div class="row">
                         <div class="col-md-12">
+                            <c:forEach var="cart" items="${allcart}">
                                 <div class="cart-detail">
                                     <h2>결제 상세</h2>
                                     <ul>
@@ -104,27 +103,36 @@
                                                 <li><span>${cart.item_name}</span>
                                                     <span><fmt:formatNumber value="${cart.item_price}" pattern="###,###원"/></span>
                                                 </li>
-
                                             </ul>
                                         </li>
-                                        <c:set var="discount" value="10000" />
-                                        <c:set var="discountedTotal" value="${cart.price - discount}" />
-                                        <li><span>배송비</span> <span>무료</span></li>
-                                        <li><span>할인금액</span> <span>10,000</span></li>
-                                        <li><span>주문금액</span> <span><fmt:formatNumber value="${discountedTotal}" pattern="###,###원"/></span></li>
                                     </ul>
                                 </div>
-
+                            </c:forEach>
                         </div>
-
-                        <div class="w-100"></div>
                     </div>
-                    </c:forEach>
-
 
                     <div class="row">
+                      <div class="col-md-12">
+                        <c:forEach var="cart" items="${allcart}">
+                                <c:set var="total" value="0" scope="session" />
+                                <c:set var="subtotal" value="${cart.item_price * cart.cnt}" /> <!-- Store individual item price in a variable -->
+                                <c:set var="total" value="${total + subtotal}" />
+                        </c:forEach>
+                                <c:set var="discount" value="10000" />
+                                <c:set var="discountedTotal" value="${total - discount}" />
+                          <div class="cart-detail">
+                                <ul>
+                                    <h2>총 결제 금액</h2>
+                                    <li><span>배송비</span> <span>무료</span></li>
+                                    <li><span>할인금액</span> <span><fmt:formatNumber value="${discount}" pattern="###,###원"/></span></li>
+                                    <li><span>총 결제 금액</span> <span><fmt:formatNumber value="${discountedTotal}" pattern="###,###원"/></span></li>
+                                </ul>
+                            </div>
+                      </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-12 text-center">
-                            <p><a href="#" class="btn btn-primary">결제하기</a></p>
+                            <p><a href="/ordercom" class="btn btn-primary">결제하기</a></p>
                         </div>
                     </div>
                 </div>
@@ -238,5 +246,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="js/main.js"></script>
 
 </body>
-</html>
 
