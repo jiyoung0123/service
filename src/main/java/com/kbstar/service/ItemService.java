@@ -47,6 +47,11 @@ public class ItemService implements KBService<Integer, Item> {
         return mapper.getpage();
     }
 
+    public Page<Item> getPageW(int pageNo) throws Exception {
+        PageHelper.startPage(pageNo, 6); // 3: 한화면에 출력되는 개수
+        return mapper.getpage();
+    }
+
     public List<Item> getMyItem(Integer id) throws Exception {
         return mapper.getmyitem(id);
     }

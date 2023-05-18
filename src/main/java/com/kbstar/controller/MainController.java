@@ -53,7 +53,14 @@ public class MainController {
     }
 
     @RequestMapping("/women")
-    public String womens(Model model){
+    public String womens(Model model) throws Exception {
+        List<Item> list = null;
+        try {
+            list = itemService.get();
+        } catch (Exception e) {
+            throw new Exception(e);
+        }
+        model.addAttribute("allitem",list);
         model.addAttribute("center", "women");
         return "index";
     }

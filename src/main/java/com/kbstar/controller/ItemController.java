@@ -109,4 +109,18 @@ public class ItemController {
         model.addAttribute("center","men");
         return "index";
     }
+
+    @RequestMapping("/women")
+    public String allpagew(@RequestParam(required = false, defaultValue = "1") int pageNo, Model model) throws Exception {
+        PageInfo<Item> p;
+        try {
+            p = new PageInfo<>(itemService.getPageW(pageNo), 5); // 5:하단 네비게이션 개수
+        } catch (Exception e) {
+            throw new Exception("시스템 장애: ER0001");
+        }
+        model.addAttribute("target","item");
+        model.addAttribute("allitem",p);
+        model.addAttribute("center","women");
+        return "index";
+    }
 }

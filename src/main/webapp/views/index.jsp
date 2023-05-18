@@ -75,13 +75,13 @@
                   <li><a href="/add-to-wishlist">Wishlist</a></li>
                 </ul>
               </li>
-              <li><a href="/women">Women</a></li>
+              <li><a href="/item/women">Women</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/contact">Contact</a></li>
 
 
               <c:choose>
-                <c:when test="${logincust ==null}">
+                <c:when test="${logincust==null}">
                   <li class="cart"><a href="/register"><i class="icon-smile"></i> REGISTER</a></li>
                   <li class="cart"><a href="/login"><i class="icon-log-in"></i> LOGIN</a></li>
                 </c:when>
