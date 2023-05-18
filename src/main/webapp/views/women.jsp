@@ -20,7 +20,7 @@
           <h2>Women's</h2>
         </div>
         <div class="menu text-center">
-          <p><a href="#">New Arrivals</a> <a href="#">Best Sellers</a> <a href="#">Extended Widths</a> <a href="#">Sale</a></p>
+          <p></p>
         </div>
       </div>
     </div>
@@ -33,27 +33,39 @@
       <div class="col-sm-4 text-center">
         <div class="featured">
           <div class="featured-img featured-img-2" style="background-image: url(/images/img_bg_2.jpg);">
-            <h2>Casuals</h2>
-            <p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
+            <h2>Register</h2>
+            <p><a href="#" class="btn btn-primary btn-lg">회원가입</a></p>
           </div>
         </div>
       </div>
       <div class="col-sm-4 text-center">
         <div class="featured">
           <div class="featured-img featured-img-2" style="background-image: url(/images/women.jpg);">
-            <h2>Dress</h2>
-            <p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
+            <h2>Login</h2>
+            <p><a href="#" class="btn btn-primary btn-lg">로그인</a></p>
           </div>
         </div>
       </div>
-      <div class="col-sm-4 text-center">
-        <div class="featured">
-          <div class="featured-img featured-img-2" style="background-image: url(/images/item-11.jpg);">
-            <h2>Sports</h2>
-            <p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
+      <c:if test="${logincust != null}">
+        <div class="col-sm-4 text-center">
+          <div class="featured">
+            <div class="featured-img featured-img-2" style="background-image: url(/images/item-11.jpg);">
+              <h2>Cart</h2>
+              <p><a href="/item/cart?id=${logincust.id}" class="btn btn-primary btn-lg">장바구니</a></p>
+            </div>
           </div>
         </div>
-      </div>
+      </c:if>
+      <c:if test="${logincust == null}"  >
+        <div class="col-sm-4 text-center">
+          <div class="featured">
+            <div class="featured-img featured-img-2" style="background-image: url(/images/item-11.jpg);">
+              <h2>Cart</h2>
+              <p><a href="/login" class="btn btn-primary btn-lg">장바구니</a></p>
+            </div>
+          </div>
+        </div>
+      </c:if>
     </div>
   </div>
 </div>
@@ -117,41 +129,6 @@
                 <li><a href="#">Sandals</a></li>
                 <li><a href="#">Lace Ups</a></li>
                 <li><a href="#">Oxfords</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-12">
-            <div class="side border mb-1">
-              <h3>Colors</h3>
-              <ul>
-                <li><a href="#">Black</a></li>
-                <li><a href="#">White</a></li>
-                <li><a href="#">Blue</a></li>
-                <li><a href="#">Red</a></li>
-                <li><a href="#">Green</a></li>
-                <li><a href="#">Grey</a></li>
-                <li><a href="#">Orange</a></li>
-                <li><a href="#">Cream</a></li>
-                <li><a href="#">Brown</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-12">
-            <div class="side border mb-1">
-              <h3>Material</h3>
-              <ul>
-                <li><a href="#">Leather</a></li>
-                <li><a href="#">Suede</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-12">
-            <div class="side border mb-1">
-              <h3>Technologies</h3>
-              <ul>
-                <li><a href="#">BioBevel</a></li>
-                <li><a href="#">Groove</a></li>
-                <li><a href="#">FlexBevel</a></li>
               </ul>
             </div>
           </div>

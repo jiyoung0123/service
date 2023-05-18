@@ -26,7 +26,7 @@
                         <h2>Men's</h2>
                     </div>
                     <div class="menu text-center">
-                        <p><a href="#">New Arrivals</a> <a href="#">Best Sellers</a> <a href="#">Extended Widths</a> <a href="#">Sale</a></p>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -52,14 +52,26 @@
                         </div>
                     </div>
                 </div>
+              <c:if test="${logincust != null}">
                 <div class="col-sm-4 text-center">
                     <div class="featured">
                         <div class="featured-img featured-img-2" style="background-image: url(/images/item-11.jpg);">
                             <h2>Cart</h2>
-                            <p><a href="#" class="btn btn-primary btn-lg">장바구니</a></p>
+                            <p><a href="/item/cart?id=${logincust.id}" class="btn btn-primary btn-lg">장바구니</a></p>
                         </div>
                     </div>
                 </div>
+              </c:if>
+              <c:if test="${logincust == null}"  >
+                  <div class="col-sm-4 text-center">
+                      <div class="featured">
+                          <div class="featured-img featured-img-2" style="background-image: url(/images/item-11.jpg);">
+                              <h2>Cart</h2>
+                              <p><a href="/login" class="btn btn-primary btn-lg">장바구니</a></p>
+                          </div>
+                      </div>
+                  </div>
+              </c:if>
             </div>
         </div>
     </div>

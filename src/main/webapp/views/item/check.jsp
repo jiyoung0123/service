@@ -121,7 +121,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <p><a href="#" class="btn btn-primary">결제하기</a></p>
+                            <p><a href="/ordercom" class="btn btn-primary">결제하기</a></p>
                         </div>
                     </div>
                 </div>
