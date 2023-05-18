@@ -98,11 +98,11 @@
           <div class="total-wrap">
             <div class="row">
               <div class="col-sm-8">
-                <form action="/checkimpl" method="post" name="id" id="cart_check" value="${cart.id}">
+                <form action="/item/checkimpl" method="post" name="id" id="cart_check" value="${cart.id}">
                   <input type="hidden" name="id" value="${cart.id}">
                   <div class="row form-group">
                     <div class="col-md-12 text-center">
-                      <button class="btn btn-primary" id="cart_checkbtn"><i class="icon-shopping-bag"></i> Place an order</button>
+                      <button class="btn btn-primary" id="cart_checkbtn"><i class="icon-shopping-bag"></i> 주문하기</button>
                     </div>
                   </div>
                 </form>

@@ -1,13 +1,16 @@
 package com.kbstar.controller;
 
+import com.kbstar.dto.Cart;
 import com.kbstar.dto.Cust;
 import com.kbstar.dto.Item;
+import com.kbstar.service.CartService;
 import com.kbstar.service.CustService;
 import com.kbstar.service.ItemService;
 import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +23,8 @@ public class AjaxImplController {
     CustService custService;
     @Autowired
     ItemService itemService;
+    @Autowired
+    CartService cartService;
 
     @RequestMapping("/checkid")
     public Object checkid(String id) throws Exception {
@@ -52,4 +57,5 @@ public class AjaxImplController {
         jo.put("price",jaPrice);
         return jo;
     }
+
 }
