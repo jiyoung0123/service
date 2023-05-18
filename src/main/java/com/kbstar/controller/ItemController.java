@@ -4,8 +4,10 @@ import com.github.pagehelper.PageInfo;
 import com.kbstar.dto.Cart;
 import com.kbstar.dto.Item;
 import com.kbstar.dto.ItemSearch;
+import com.kbstar.dto.Review;
 import com.kbstar.service.CartService;
 import com.kbstar.service.ItemService;
+import com.kbstar.service.ReviewService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,12 +26,17 @@ public class ItemController {
     ItemService itemService;
     @Autowired
     CartService cartService;
+    @Autowired
+    ReviewService reviewService;
     String dir= "item/";
 
     @RequestMapping("/get")
     public String get(Model model, Integer id) throws Exception {
         Item item = null;
         item = itemService.get(id);
+        List<Review> list = null;
+        list = reviewService.get();
+        model.addAttribute("review",list);
         model.addAttribute("gitem",item);
         model.addAttribute("center",dir+"get");
         return "index";
