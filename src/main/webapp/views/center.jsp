@@ -85,9 +85,9 @@
       </div>
       <div class="col-sm-6 text-center">
         <div class="featured">
-          <a href="/women" class="featured-img" style="background-image: url(images/women.jpg);"></a>
+          <a href="/item/women" class="featured-img" style="background-image: url(images/women.jpg);"></a>
           <div class="desc">
-            <h2><a href="/women">Shop Women's Collection</a></h2>
+            <h2><a href="/item/women">Shop Women's Collection</a></h2>
           </div>
         </div>
       </div>
