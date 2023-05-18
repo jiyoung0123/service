@@ -39,24 +39,24 @@
                 <div class="col-sm-4 text-center">
                     <div class="featured">
                         <div class="featured-img featured-img-2" style="background-image: url(/images/men.jpg);">
-                            <h2>Casuals</h2>
-                            <p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
+                            <h2>Register</h2>
+                            <p><a href="/register" class="btn btn-primary btn-lg">회원가입</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4 text-center">
                     <div class="featured">
                         <div class="featured-img featured-img-2" style="background-image: url(/images/women.jpg);">
-                            <h2>Dress</h2>
-                            <p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
+                            <h2>Login</h2>
+                            <p><a href="/login" class="btn btn-primary btn-lg">로그인</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4 text-center">
                     <div class="featured">
                         <div class="featured-img featured-img-2" style="background-image: url(/images/item-11.jpg);">
-                            <h2>Sports</h2>
-                            <p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
+                            <h2>Cart</h2>
+                            <p><a href="#" class="btn btn-primary btn-lg">장바구니</a></p>
                         </div>
                     </div>
                 </div>
