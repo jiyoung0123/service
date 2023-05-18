@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @Slf4j
 public class ReviewController {
@@ -15,8 +17,11 @@ public class ReviewController {
     ReviewService reviewService;
     @RequestMapping("/reviewimpl")
     public String get(Model model, Review review, String id) throws Exception {
-        log.info(review.toString());
         reviewService.register(review);
+        List<Review> list = null;
+        list = reviewService.get();
+        log.info(list.toString());
+        model.addAttribute("review",list);
         model.addAttribute("center","item/get");
         return "redirect:/item/get?id="+id;
     }
