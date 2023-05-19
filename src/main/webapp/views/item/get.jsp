@@ -41,6 +41,7 @@
         });
         }
     };
+
     let quantity_btn = {
        init:function(){
            var quantitiy=0;
@@ -75,7 +76,9 @@
         item_get.init();
         quantity_btn.init();
         purchase.init();
+        wish_btn.init();
     });
+
     $(function () {
         $('[data-toggle="popover"]').popover();
     });
@@ -164,11 +167,9 @@
                                             </p>
                                         </div>
                                         <div class="form-group">
-                                            <p class="addtocart">
-                                                <button id="cart_btn" type="button" class="btn btn-primary btn-addtocart">
-                                                    <i class="icon-shopping-cart"></i> Add to Cart
-                                                </button>
-                                            </p>
+                                            <button id="cart_btn" type="button" class="btn btn-primary btn-addtocart">
+                                                <i class="icon-shopping-cart"></i> Add to Cart
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

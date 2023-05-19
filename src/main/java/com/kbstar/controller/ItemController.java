@@ -81,6 +81,7 @@ public class ItemController {
     }
 //        return "redirect:/item/get?id="+cart.getCust_id();
 
+
     @RequestMapping("/addcheck")
     public String addcheck(Model model, Cart cart) throws Exception {
         return "redirect:/item/check?id="+cart.getItem_id();

@@ -34,7 +34,7 @@
         <div class="featured">
           <div class="featured-img featured-img-2" style="background-image: url(/images/img_bg_2.jpg);">
             <h2>Register</h2>
-            <p><a href="#" class="btn btn-primary btn-lg">회원가입</a></p>
+            <p><a href="/register" class="btn btn-primary btn-lg">회원가입</a></p>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@
         <div class="featured">
           <div class="featured-img featured-img-2" style="background-image: url(/images/women.jpg);">
             <h2>Login</h2>
-            <p><a href="#" class="btn btn-primary btn-lg">로그인</a></p>
+            <p><a href="/login" class="btn btn-primary btn-lg">로그인</a></p>
           </div>
         </div>
       </div>

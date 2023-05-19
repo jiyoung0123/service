@@ -8,7 +8,7 @@
         init:function(){
             var mapContainer = document.querySelector('#map'); // 지도를 표시할 div
             var mapOption = {
-                center: new kakao.maps.LatLng(37.5591786, 126.9776692), // 지도의 중심좌표
+                center: new kakao.maps.LatLng(37.545025, 127.056574), // 지도의 중심좌표
                 level: 3 // 지도의 확대 레벨
             };
             // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
@@ -23,7 +23,7 @@
             map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
             // 마커가 표시될 위치입니다
-            var markerPosition  = new kakao.maps.LatLng(37.5591786, 126.9776692);
+            var markerPosition  = new kakao.maps.LatLng(37.545025, 127.056574);
             // 마커를 생성합니다
             var marker = new kakao.maps.Marker({
                 position: markerPosition
@@ -31,7 +31,7 @@
             // 마커가 지도 위에 표시되도록 설정합니다
             marker.setMap(map);
             // 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다
-            var iwContent = '<img src="/images/a.jpg" style="width:200px"><div style="padding:5px;">남대문구두</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            var iwContent = '<img src="/images/a.jpg" style="width:200px"><div style="padding:5px;">DIGISHOE</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
             // 인포윈도우를 생성합니다
             var infowindow = new kakao.maps.InfoWindow({
                 content : iwContent
@@ -75,7 +75,7 @@
                 <h3>Contact Information</h3>
                 <div class="row contact-info-wrap">
                     <div class="col-md-3">
-                        <p><span><i class="icon-location"></i></span> 198 West 21th Street, <br> Suite 721 New York NY 10016</p>
+                        <p><span><i class="icon-location"></i></span> 서울특별시 성동구 아차산로 111 2층<br>성동구 성수동2가 300-2 2층</p>
                     </div>
                     <div class="col-md-3">
                         <p><span><i class="icon-phone3"></i></span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
