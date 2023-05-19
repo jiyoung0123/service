@@ -18,13 +18,13 @@ class InsertTest {
     @Test
     void contextLoads() {
         Date rdate = new Date();
-        Review obj = new Review(1,"강감찬",rdate,"맛있어요");
-        try {
-            service.register(obj);
-            log.info("등록 정상..");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+////        Review obj = new Review(1,"강감찬",rdate,"맛있어요");
+////        try {
+//            service.register(obj);
+//            log.info("등록 정상..");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
 }

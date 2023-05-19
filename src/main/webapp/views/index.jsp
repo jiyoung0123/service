@@ -38,6 +38,37 @@
   <!-- Theme style  -->
   <link rel="stylesheet" href="/css/style.css">
 
+
+
+  <script>
+    let center = {
+      init:function(){
+        $.ajax({
+          url:'/weather2',
+          success:function(data){
+            center.display(data);
+          }
+        });
+      },display:function(data){
+        //result는 배열 data임
+        var result = data.response.body.items.item;
+        var txt='';
+
+        //$(result).each();배열을 돌리는것. 제이쿼리에서 each라는 함수를 제공해줌
+        $(result).each(function(index, item){
+          txt += '<h5>';
+          txt += item.tm + ''+item.ta;
+          txt += '</h5>';
+        });
+        $('#w2').html(txt);
+      }
+    };
+    $(function(){
+      center.init();
+    });
+  </script>
+
+
 </head>
 <body>
 
@@ -101,23 +132,25 @@
         <div class="row">
           <div class="col-sm-8 offset-sm-2 text-center">
             <div class="row">
-              <div class="owl-carousel2">
                 <div class="item">
                   <div class="col">
-                    <h3><a href="#">25% off (Almost) Everything! Use Code: Summer Sale</a></h3>
+                    <h3>Weather Info<i class="icon-"/></h3>
                   </div>
                 </div>
                 <div class="item">
                   <div class="col">
-                    <h3><a href="#">Our biggest sale yet 50% off all summer shoes</a></h3>
+                    <div id="w2">${weatherinfo}</div>
                   </div>
                 </div>
-              </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
+
   </nav>
   <%--  ========================네비게이션================================--%>
 

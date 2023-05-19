@@ -4,6 +4,7 @@ import com.kbstar.dto.Cust;
 import com.kbstar.dto.Item;
 import com.kbstar.service.CustService;
 import com.kbstar.service.ItemService;
+import com.kbstar.util.WeatherUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -34,6 +35,9 @@ public class MainController {
         } catch (Exception e) {
             throw new Exception(e);
         }
+
+        String result = WeatherUtil.getWeather1("109");
+        model.addAttribute("weatherinfo",result);
         model.addAttribute("allitem",list);
         model.addAttribute("center", "center");
         return "index";

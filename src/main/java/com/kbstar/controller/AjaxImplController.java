@@ -6,6 +6,7 @@ import com.kbstar.dto.Item;
 import com.kbstar.service.CartService;
 import com.kbstar.service.CustService;
 import com.kbstar.service.ItemService;
+import com.kbstar.util.WeatherUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -57,5 +58,12 @@ public class AjaxImplController {
         jo.put("price",jaPrice);
         return jo;
     }
+
+    @RequestMapping("/weather2")
+    public Object weather2() throws Exception {
+        return WeatherUtil.getWeather3("108");
+    }
+
+
 
 }
