@@ -14,6 +14,7 @@ public class Review {
     private String name;
     private Date rdate;
     private String text;
+    private int ishidden;
 
     public Review(String name, String text) {
         this.name = name;
